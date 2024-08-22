@@ -4,12 +4,11 @@
  * @return {boolean[]}
  */
 var kidsWithCandies = function(candies, extraCandies) {
-    const copied = [...candies];
     const answer = [];
 
-    for (let i = 0; i < copied.length; i ++) {
-        let currentValue = copied[i] + extraCandies;
-        if (Math.max(...copied, currentValue) === currentValue) {
+    for (let i = 0; i < candies.length; i ++) {
+        let currentValue = candies[i] + extraCandies;
+        if (Math.max(...candies, currentValue) === currentValue) {
             answer.push(true);
         } else {
             answer.push(false);
