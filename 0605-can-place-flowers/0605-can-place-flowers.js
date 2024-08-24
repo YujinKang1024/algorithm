@@ -5,7 +5,7 @@
  */
 var canPlaceFlowers = function (flowerbed, n) {
     if (flowerbed.length === 1 && n === 1) {
-        return flowerbed[0] === 0 ? true : flase;
+        return flowerbed[0] === 0;
     }
 
     let count = n;
