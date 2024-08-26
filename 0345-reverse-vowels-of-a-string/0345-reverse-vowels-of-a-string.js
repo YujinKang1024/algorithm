@@ -3,10 +3,9 @@
  * @return {string}
  */
 var reverseVowels = function(s) {
-    const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
     const spreadS = [...s];
     const includedVowels = spreadS.filter((elem, index, arr) => {
-        return vowels.includes(elem);
+        return ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"].includes(elem);
     });
 
     let reversedOrder = includedVowels.length - 1;
