@@ -3,23 +3,14 @@
  * @param {string} word2
  * @return {string}
  */
-const mergeAlternately = function(word1, word2) {
-    const spreadedWord1 = [...word1];
-    const spreadedWord2 = [...word2];
-    const mergeWord = [];
+var mergeAlternately = function(word1, word2) {
+    const longWordLength = word1.length > word2.length ? word1.length : word2.length;
+    const result = [];
 
-    let longestLength;
-
-    if (spreadedWord1.length >= spreadedWord2.length) {
-        longestLength = spreadedWord1.length;
-    } else {
-        longestLength = spreadedWord2.length;
+    for (i = 0; i < longWordLength; i++) {
+        if (word1[i]) result.push(word1[i]);
+        if (word2[i]) result.push(word2[i]);
     }
 
-    for (let i = 0; i < longestLength; i++) {
-      if (spreadedWord1[i]) mergeWord.push(spreadedWord1[i]);
-      if (spreadedWord2[i]) mergeWord.push(spreadedWord2[i]);
-    }
-    
-    return mergeWord.join('');
+    return result.join('');
 };
