@@ -2,17 +2,18 @@
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function (nums) {
-    if (nums.length === 0) return 0;
-
-    let count = 1;
-
-    for (let i = 1; i < nums.length; i++) {
-        if (nums[i] !== nums[count - 1]) {
-            nums[count] = nums[i];
-            count++;
+var removeDuplicates = function(nums) {
+    const uniqueNums = [];
+    
+    for (let i = 0; i < nums.length; i++) {
+        if (uniqueNums.includes(nums[i])) {
+            nums.splice(i, 1);
+            i--;
+        } else {
+            uniqueNums.push(nums[i]);
         }
     }
 
-    return count;
+    return uniqueNums.length;
+    
 };
