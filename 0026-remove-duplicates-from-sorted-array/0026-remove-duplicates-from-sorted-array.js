@@ -3,17 +3,12 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    const uniqueNums = [];
-    
-    for (let i = 0; i < nums.length; i++) {
-        if (uniqueNums.includes(nums[i])) {
-            nums.splice(i, 1);
-            i--;
-        } else {
-            uniqueNums.push(nums[i]);
+    let index = 1;
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] !== nums[i-1]) {
+            nums[index] = nums[i];
+            index++; 
         }
     }
-
-    return uniqueNums.length;
-    
+    return index;
 };
