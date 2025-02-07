@@ -3,7 +3,6 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    let elemCount = nums.length;
     let targetElem = 2; 
 
     for (let i = 2; i < nums.length; i++) {
